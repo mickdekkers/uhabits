@@ -90,6 +90,11 @@
         <item>@string/toggle</item>
     </string-array>
 
+    <string-array name="events" translatable="false">
+        <item>@string/checked</item>
+        <item>@string/unchecked</item>
+    </string-array>
+
     <string-array name="strengthIntervalNames" translatable="false">
         <item>@string/day</item>
         <item>@string/week</item>

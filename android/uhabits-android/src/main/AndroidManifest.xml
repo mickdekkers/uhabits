@@ -203,6 +203,17 @@
             </intent-filter>
         </activity>
 
+        <!-- Tasker -->
+        <activity
+            android:name=".automation.EditEventActivity"
+            android:exported="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="net.dinglisch.android.tasker.ACTION_EDIT_EVENT"/>
+            </intent-filter>
+        </activity>
+
         <!-- Locale/Tasker -->
         <receiver
             android:name=".automation.FireSettingReceiver"

@@ -209,8 +209,11 @@
     <string name="database_repaired">Database repaired.</string>
 
     <string name="uncheck">Uncheck</string>
+    <string name="unchecked">Unchecked</string>
+    <string name="checked">Checked</string>
     <string name="toggle">Toggle</string>
     <string name="action">Action</string>
+    <string name="event">Event</string>
     <string name="habit">Habit</string>
 
     <string name="sort">Sort</string>

@@ -31,10 +31,10 @@ import org.isoron.uhabits.R
 import org.isoron.uhabits.core.models.*
 import java.util.*
 
-class EditSettingRootView(
+class EditEventRootView(
         context: Context,
         private val habitList: HabitList,
-        private val controller: EditSettingController
+        private val controller: EditEventController
 ) : BaseRootView(context) {
 
     @BindView(R.id.toolbar)
@@ -43,11 +43,11 @@ class EditSettingRootView(
     @BindView(R.id.habitSpinner)
     lateinit var habitSpinner: AppCompatSpinner
 
-    @BindView(R.id.actionSpinner)
-    lateinit var actionSpinner: AppCompatSpinner
+    @BindView(R.id.eventSpinner)
+    lateinit var eventSpinner: AppCompatSpinner
 
     init {
-        addView(inflate(getContext(), R.layout.automation_action, null))
+        addView(inflate(getContext(), R.layout.automation_event, null))
         ButterKnife.bind(this)
         populateHabitSpinner()
     }
@@ -66,10 +66,10 @@ class EditSettingRootView(
 
     @OnClick(R.id.buttonSave)
     fun onClickSave() {
-        val action = actionSpinner.selectedItemPosition
+        val event = eventSpinner.selectedItemPosition
         val habitPosition = habitSpinner.selectedItemPosition
         val habit = habitList.getByPosition(habitPosition)
-        controller.onSave(habit, action)
+        controller.onSave(habit, event)
     }
 
     private fun populateHabitSpinner() {
