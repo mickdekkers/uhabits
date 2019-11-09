@@ -21,7 +21,9 @@ package org.isoron.uhabits;
 
 import android.content.*;
 
+
 import org.isoron.androidbase.*;
+import org.isoron.uhabits.automation.*;
 import org.isoron.uhabits.core.*;
 import org.isoron.uhabits.core.commands.*;
 import org.isoron.uhabits.core.io.*;
@@ -56,6 +58,8 @@ public interface HabitsApplicationComponent
     CreateHabitCommandFactory getCreateHabitCommandFactory();
 
     EditHabitCommandFactory getEditHabitCommandFactory();
+
+    AutomationEventManager getAutomationEventManager();
 
     GenericImporter getGenericImporter();
 

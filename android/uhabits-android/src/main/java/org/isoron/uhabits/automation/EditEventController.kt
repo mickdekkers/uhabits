@@ -38,8 +38,7 @@ class EditEventController(private val activity: Activity) {
         val bundle = Bundle()
         bundle.putInt("event", event)
         bundle.putLong("habit", habit.getId()!!)
-
-        // TODO: check what is necessary for condition/event editor
+        
         activity.setResult(Activity.RESULT_OK, Intent().apply {
             putExtra(EXTRA_STRING_BLURB, blurb)
             putExtra(EXTRA_BUNDLE, bundle)
@@ -48,10 +47,10 @@ class EditEventController(private val activity: Activity) {
     }
 
     private fun getEventName(event: Int): String {
-        when (event) {
-            EVENT_CHECKED -> return activity.getString(R.string.checked)
-            EVENT_UNCHECKED -> return activity.getString(R.string.unchecked)
-            else -> return "???"
+        return when (event) {
+            EVENT_CHECKED -> activity.getString(R.string.checked)
+            EVENT_UNCHECKED -> activity.getString(R.string.unchecked)
+            else -> "???"
         }
     }
 }

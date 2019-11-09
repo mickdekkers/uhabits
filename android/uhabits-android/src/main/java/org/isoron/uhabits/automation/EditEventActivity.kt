@@ -35,8 +35,10 @@ class EditEventActivity : BaseActivity() {
                         .setCompletedAllowed(true)
                         .build())
 
+        val args = EventUtils.parseIntent(this.intent, habits)
+
         val controller = EditEventController(this)
-        val rootView = EditEventRootView(this, habits, controller)
+        val rootView = EditEventRootView(this, habits, controller, args)
         val screen = BaseScreen(this)
         screen.setRootView(rootView)
         setScreen(screen)

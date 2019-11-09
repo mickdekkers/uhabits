@@ -690,9 +690,11 @@ public class TaskerPlugin {
          */
         public static int addPassThroughMessageID( Intent requestQueryIntent ) {
 
-            Bundle passThroughBundle = retrieveOrCreatePassThroughBundle( requestQueryIntent );
+            return addPassThroughMessageID(requestQueryIntent, getPositiveNonRepeatingRandomInteger());
+        }
+        public static int addPassThroughMessageID( Intent requestQueryIntent, int id ) {
 
-            int id = getPositiveNonRepeatingRandomInteger();
+            Bundle passThroughBundle = retrieveOrCreatePassThroughBundle( requestQueryIntent );
 
             passThroughBundle.putInt( PASS_THROUGH_BUNDLE_MESSAGE_ID_KEY, id );
 

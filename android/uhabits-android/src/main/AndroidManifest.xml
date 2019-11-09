@@ -203,6 +203,15 @@
             </intent-filter>
         </activity>
 
+        <!-- Locale/Tasker -->
+        <receiver
+            android:name=".automation.FireSettingReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.twofortyfouram.locale.intent.action.FIRE_SETTING"/>
+            </intent-filter>
+        </receiver>
+
         <!-- Tasker -->
         <activity
             android:name=".automation.EditEventActivity"
@@ -214,12 +223,12 @@
             </intent-filter>
         </activity>
 
-        <!-- Locale/Tasker -->
+        <!-- Tasker -->
         <receiver
-            android:name=".automation.FireSettingReceiver"
+            android:name=".automation.QueryEventReceiver"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.twofortyfouram.locale.intent.action.FIRE_SETTING"/>
+                <action android:name="com.twofortyfouram.locale.intent.action.QUERY_CONDITION"/>
             </intent-filter>
         </receiver>
 

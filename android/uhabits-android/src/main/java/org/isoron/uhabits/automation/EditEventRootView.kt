@@ -34,7 +34,8 @@ import java.util.*
 class EditEventRootView(
         context: Context,
         private val habitList: HabitList,
-        private val controller: EditEventController
+        private val controller: EditEventController,
+        args: EventUtils.Arguments?
 ) : BaseRootView(context) {
 
     @BindView(R.id.toolbar)
@@ -50,6 +51,11 @@ class EditEventRootView(
         addView(inflate(getContext(), R.layout.automation_event, null))
         ButterKnife.bind(this)
         populateHabitSpinner()
+
+        args?.let {
+            habitSpinner.setSelection(habitList.indexOf(it.habit))
+            eventSpinner.setSelection(it.event)
+        }
     }
 
     override fun getToolbar(): Toolbar {

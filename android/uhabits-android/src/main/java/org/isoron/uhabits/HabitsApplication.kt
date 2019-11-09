@@ -22,6 +22,7 @@ package org.isoron.uhabits
 import android.app.*
 import android.content.*
 import org.isoron.androidbase.*
+import org.isoron.uhabits.automation.AutomationEventManager
 import org.isoron.uhabits.core.database.*
 import org.isoron.uhabits.core.reminders.*
 import org.isoron.uhabits.core.ui.*
@@ -38,6 +39,7 @@ class HabitsApplication : Application() {
     private lateinit var widgetUpdater: WidgetUpdater
     private lateinit var reminderScheduler: ReminderScheduler
     private lateinit var notificationTray: NotificationTray
+    private lateinit var automationEventManager: AutomationEventManager
 
     override fun onCreate() {
         super.onCreate()
@@ -68,6 +70,8 @@ class HabitsApplication : Application() {
 
         notificationTray = component.notificationTray
         notificationTray.startListening()
+
+        automationEventManager = component.automationEventManager
 
         val prefs = component.preferences
         prefs.setLastAppVersion(BuildConfig.VERSION_CODE)
